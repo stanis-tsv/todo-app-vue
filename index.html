@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDoApp - Vue.js</title>
+  <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app" class="app">
+    <label class="addTaskLabel" for="addTask">Add new task:</label>
+    <input 
+      type="text" 
+      class="addTask"
+      id="addTask"
+      @keyup.enter="addTask" 
+      v-model="currentTask"
+    >
+    <ul class="list">
+      <li v-for="(task, index) in tasks">
+        <input 
+          type="text" 
+          v-if="task.isEditing"
+          @keyup.enter="editTask(task.text)"
+          v-model="editValue"
+        >
+        <span
+          class="text" 
+          v-else 
+          @click="task.isCompleted = !task.isCompleted"
+          :class="{strike: task.isCompleted}"
+        >>{{ task.text }}</span>
+        <button class="removeTask" @click="tasks.splice(index, 1)">x</button>
+        <button class="changeEditing" @click="changeEditing(task.text)">Edit</button>
+      </li>
+    </ul>
+    <ul class="hints">
+      <li>- Press 'Enter' to submit input fields</li>
+      <li>- Any element is clickable</li>
+    </ul>
+  </div>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="main.js"></script>
+</body>
+</html>

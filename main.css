@@ -1,0 +1,91 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.strike {
+    text-decoration: line-through;
+}
+
+input {
+    height: 30px;
+    font-size: 25px;
+}
+
+.app {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.addTaskLabel {
+    margin: 30px 0;
+}
+
+.addTask,
+.list{
+    width: 50%;
+}
+
+.list li {
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+    margin-top: 30px;
+}
+
+.text {
+    display: inline-block;
+    width: 70%;
+    word-wrap: break-word;
+}
+
+.removeTask,
+.changeEditing {
+    font-family: 'Press Start 2P', cursive;
+    background: transparent;
+    color: #fff;
+    position: absolute;
+    right: 0;
+}
+
+.removeTask {
+    right: 90px;
+}
+
+.hints {
+    margin: 50px 0;
+    font-size: 5px;
+    padding: 30px 20px;
+}
+
+.hints li {
+    transition: .3s;
+}
+
+.hints:hover li {
+    font-size: 20px;
+    margin-bottom: 20px;
+    transition: .3s;
+}
+
+@media (max-width: 1000px) { 
+
+    .app {
+        padding: 0 20px;
+    }
+
+    .addTask,
+    .list {
+        width: 100%;
+    }
+
+ }
