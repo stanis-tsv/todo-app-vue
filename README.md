@@ -1,4 +1,4 @@
-APP DEMO LINK - https://stanis-tsv.github.io/todo-app-vue/
+DEMO LINK - https://stanis-tsv.github.io/todo-app-vue/
 
 Vue.js app To Do List
 
